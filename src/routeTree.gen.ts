@@ -15,10 +15,18 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppValuationRouteImport } from './routes/app.valuation'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
 import { Route as AppRiskScannerRouteImport } from './routes/app.risk-scanner'
+import { Route as AppReportsRouteImport } from './routes/app.reports'
+import { Route as AppProfileRouteImport } from './routes/app.profile'
 import { Route as AppOptimizationRouteImport } from './routes/app.optimization'
+import { Route as AppInvestmentMemoRouteImport } from './routes/app.investment-memo'
+import { Route as AppFinancialNormalizerRouteImport } from './routes/app.financial-normalizer'
 import { Route as AppExitScoreRouteImport } from './routes/app.exit-score'
+import { Route as AppDataSourcesRouteImport } from './routes/app.data-sources'
+import { Route as AppDataRoomRouteImport } from './routes/app.data-room'
 import { Route as AppDashboardRouteImport } from './routes/app.dashboard'
+import { Route as AppBillingRouteImport } from './routes/app.billing'
 
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
@@ -50,9 +58,24 @@ const AppValuationRoute = AppValuationRouteImport.update({
   path: '/valuation',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppRiskScannerRoute = AppRiskScannerRouteImport.update({
   id: '/risk-scanner',
   path: '/risk-scanner',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReportsRoute = AppReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProfileRoute = AppProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => AppRoute,
 } as any)
 const AppOptimizationRoute = AppOptimizationRouteImport.update({
@@ -60,14 +83,39 @@ const AppOptimizationRoute = AppOptimizationRouteImport.update({
   path: '/optimization',
   getParentRoute: () => AppRoute,
 } as any)
+const AppInvestmentMemoRoute = AppInvestmentMemoRouteImport.update({
+  id: '/investment-memo',
+  path: '/investment-memo',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFinancialNormalizerRoute = AppFinancialNormalizerRouteImport.update({
+  id: '/financial-normalizer',
+  path: '/financial-normalizer',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppExitScoreRoute = AppExitScoreRouteImport.update({
   id: '/exit-score',
   path: '/exit-score',
   getParentRoute: () => AppRoute,
 } as any)
+const AppDataSourcesRoute = AppDataSourcesRouteImport.update({
+  id: '/data-sources',
+  path: '/data-sources',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDataRoomRoute = AppDataRoomRouteImport.update({
+  id: '/data-room',
+  path: '/data-room',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppDashboardRoute = AppDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBillingRoute = AppBillingRouteImport.update({
+  id: '/billing',
+  path: '/billing',
   getParentRoute: () => AppRoute,
 } as any)
 
@@ -77,10 +125,18 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/signup': typeof SignupRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/dashboard': typeof AppDashboardRoute
+  '/app/data-room': typeof AppDataRoomRoute
+  '/app/data-sources': typeof AppDataSourcesRoute
   '/app/exit-score': typeof AppExitScoreRoute
+  '/app/financial-normalizer': typeof AppFinancialNormalizerRoute
+  '/app/investment-memo': typeof AppInvestmentMemoRoute
   '/app/optimization': typeof AppOptimizationRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/reports': typeof AppReportsRoute
   '/app/risk-scanner': typeof AppRiskScannerRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/valuation': typeof AppValuationRoute
 }
 export interface FileRoutesByTo {
@@ -89,10 +145,18 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/signup': typeof SignupRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/dashboard': typeof AppDashboardRoute
+  '/app/data-room': typeof AppDataRoomRoute
+  '/app/data-sources': typeof AppDataSourcesRoute
   '/app/exit-score': typeof AppExitScoreRoute
+  '/app/financial-normalizer': typeof AppFinancialNormalizerRoute
+  '/app/investment-memo': typeof AppInvestmentMemoRoute
   '/app/optimization': typeof AppOptimizationRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/reports': typeof AppReportsRoute
   '/app/risk-scanner': typeof AppRiskScannerRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/valuation': typeof AppValuationRoute
 }
 export interface FileRoutesById {
@@ -102,10 +166,18 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/signup': typeof SignupRoute
+  '/app/billing': typeof AppBillingRoute
   '/app/dashboard': typeof AppDashboardRoute
+  '/app/data-room': typeof AppDataRoomRoute
+  '/app/data-sources': typeof AppDataSourcesRoute
   '/app/exit-score': typeof AppExitScoreRoute
+  '/app/financial-normalizer': typeof AppFinancialNormalizerRoute
+  '/app/investment-memo': typeof AppInvestmentMemoRoute
   '/app/optimization': typeof AppOptimizationRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/reports': typeof AppReportsRoute
   '/app/risk-scanner': typeof AppRiskScannerRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/valuation': typeof AppValuationRoute
 }
 export interface FileRouteTypes {
@@ -116,10 +188,18 @@ export interface FileRouteTypes {
     | '/login'
     | '/onboarding'
     | '/signup'
+    | '/app/billing'
     | '/app/dashboard'
+    | '/app/data-room'
+    | '/app/data-sources'
     | '/app/exit-score'
+    | '/app/financial-normalizer'
+    | '/app/investment-memo'
     | '/app/optimization'
+    | '/app/profile'
+    | '/app/reports'
     | '/app/risk-scanner'
+    | '/app/settings'
     | '/app/valuation'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -128,10 +208,18 @@ export interface FileRouteTypes {
     | '/login'
     | '/onboarding'
     | '/signup'
+    | '/app/billing'
     | '/app/dashboard'
+    | '/app/data-room'
+    | '/app/data-sources'
     | '/app/exit-score'
+    | '/app/financial-normalizer'
+    | '/app/investment-memo'
     | '/app/optimization'
+    | '/app/profile'
+    | '/app/reports'
     | '/app/risk-scanner'
+    | '/app/settings'
     | '/app/valuation'
   id:
     | '__root__'
@@ -140,10 +228,18 @@ export interface FileRouteTypes {
     | '/login'
     | '/onboarding'
     | '/signup'
+    | '/app/billing'
     | '/app/dashboard'
+    | '/app/data-room'
+    | '/app/data-sources'
     | '/app/exit-score'
+    | '/app/financial-normalizer'
+    | '/app/investment-memo'
     | '/app/optimization'
+    | '/app/profile'
+    | '/app/reports'
     | '/app/risk-scanner'
+    | '/app/settings'
     | '/app/valuation'
   fileRoutesById: FileRoutesById
 }
@@ -199,11 +295,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppValuationRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/risk-scanner': {
       id: '/app/risk-scanner'
       path: '/risk-scanner'
       fullPath: '/app/risk-scanner'
       preLoaderRoute: typeof AppRiskScannerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/reports': {
+      id: '/app/reports'
+      path: '/reports'
+      fullPath: '/app/reports'
+      preLoaderRoute: typeof AppReportsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/profile': {
+      id: '/app/profile'
+      path: '/profile'
+      fullPath: '/app/profile'
+      preLoaderRoute: typeof AppProfileRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/optimization': {
@@ -213,11 +330,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppOptimizationRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/investment-memo': {
+      id: '/app/investment-memo'
+      path: '/investment-memo'
+      fullPath: '/app/investment-memo'
+      preLoaderRoute: typeof AppInvestmentMemoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/financial-normalizer': {
+      id: '/app/financial-normalizer'
+      path: '/financial-normalizer'
+      fullPath: '/app/financial-normalizer'
+      preLoaderRoute: typeof AppFinancialNormalizerRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/exit-score': {
       id: '/app/exit-score'
       path: '/exit-score'
       fullPath: '/app/exit-score'
       preLoaderRoute: typeof AppExitScoreRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/data-sources': {
+      id: '/app/data-sources'
+      path: '/data-sources'
+      fullPath: '/app/data-sources'
+      preLoaderRoute: typeof AppDataSourcesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/data-room': {
+      id: '/app/data-room'
+      path: '/data-room'
+      fullPath: '/app/data-room'
+      preLoaderRoute: typeof AppDataRoomRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/dashboard': {
@@ -227,22 +372,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppDashboardRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/billing': {
+      id: '/app/billing'
+      path: '/billing'
+      fullPath: '/app/billing'
+      preLoaderRoute: typeof AppBillingRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
 interface AppRouteChildren {
+  AppBillingRoute: typeof AppBillingRoute
   AppDashboardRoute: typeof AppDashboardRoute
+  AppDataRoomRoute: typeof AppDataRoomRoute
+  AppDataSourcesRoute: typeof AppDataSourcesRoute
   AppExitScoreRoute: typeof AppExitScoreRoute
+  AppFinancialNormalizerRoute: typeof AppFinancialNormalizerRoute
+  AppInvestmentMemoRoute: typeof AppInvestmentMemoRoute
   AppOptimizationRoute: typeof AppOptimizationRoute
+  AppProfileRoute: typeof AppProfileRoute
+  AppReportsRoute: typeof AppReportsRoute
   AppRiskScannerRoute: typeof AppRiskScannerRoute
+  AppSettingsRoute: typeof AppSettingsRoute
   AppValuationRoute: typeof AppValuationRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
+  AppBillingRoute: AppBillingRoute,
   AppDashboardRoute: AppDashboardRoute,
+  AppDataRoomRoute: AppDataRoomRoute,
+  AppDataSourcesRoute: AppDataSourcesRoute,
   AppExitScoreRoute: AppExitScoreRoute,
+  AppFinancialNormalizerRoute: AppFinancialNormalizerRoute,
+  AppInvestmentMemoRoute: AppInvestmentMemoRoute,
   AppOptimizationRoute: AppOptimizationRoute,
+  AppProfileRoute: AppProfileRoute,
+  AppReportsRoute: AppReportsRoute,
   AppRiskScannerRoute: AppRiskScannerRoute,
+  AppSettingsRoute: AppSettingsRoute,
   AppValuationRoute: AppValuationRoute,
 }
 
