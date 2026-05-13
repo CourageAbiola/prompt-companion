@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ExitEcom — Pre-Exit Intelligence for E-commerce" },
+      { title: "ExitEcom: Pre-Exit Intelligence for E-commerce" },
       { name: "description", content: "ExitEcom is the operating system e-commerce founders use before selling. Get your Exit Score, understand your valuation, and increase what buyers will pay." },
       { name: "author", content: "ExitEcom" },
-      { property: "og:title", content: "ExitEcom — Pre-Exit Intelligence for E-commerce" },
-      { property: "og:description", content: "We don't help you sell your business. We make your business worth buying." },
+      { property: "og:title", content: "ExitEcom: Pre-Exit Intelligence for E-commerce" },
+      { property: "og:description", content: "ExitEcom is the operating system e-commerce founders use before selling. Get your Exit Score, understand your valuation, and increase what buyers will pay." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "ExitEcom: Pre-Exit Intelligence for E-commerce" },
+      { name: "twitter:description", content: "ExitEcom is the operating system e-commerce founders use before selling. Get your Exit Score, understand your valuation, and increase what buyers will pay." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ae53cdf4-bafb-4fe0-89b3-29bafd144c56/id-preview-595a9bd8--b0f8e43a-aa0d-4400-8120-734190dac7db.lovable.app-1778641967718.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ae53cdf4-bafb-4fe0-89b3-29bafd144c56/id-preview-595a9bd8--b0f8e43a-aa0d-4400-8120-734190dac7db.lovable.app-1778641967718.png" },
     ],
     links: [
       {
