@@ -14,6 +14,11 @@ import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppValuationRouteImport } from './routes/app.valuation'
+import { Route as AppRiskScannerRouteImport } from './routes/app.risk-scanner'
+import { Route as AppOptimizationRouteImport } from './routes/app.optimization'
+import { Route as AppExitScoreRouteImport } from './routes/app.exit-score'
+import { Route as AppDashboardRouteImport } from './routes/app.dashboard'
 
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
@@ -40,40 +45,111 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppValuationRoute = AppValuationRouteImport.update({
+  id: '/valuation',
+  path: '/valuation',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRiskScannerRoute = AppRiskScannerRouteImport.update({
+  id: '/risk-scanner',
+  path: '/risk-scanner',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppOptimizationRoute = AppOptimizationRouteImport.update({
+  id: '/optimization',
+  path: '/optimization',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppExitScoreRoute = AppExitScoreRouteImport.update({
+  id: '/exit-score',
+  path: '/exit-score',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/app': typeof AppRoute
+  '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/signup': typeof SignupRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/exit-score': typeof AppExitScoreRoute
+  '/app/optimization': typeof AppOptimizationRoute
+  '/app/risk-scanner': typeof AppRiskScannerRoute
+  '/app/valuation': typeof AppValuationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/app': typeof AppRoute
+  '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/signup': typeof SignupRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/exit-score': typeof AppExitScoreRoute
+  '/app/optimization': typeof AppOptimizationRoute
+  '/app/risk-scanner': typeof AppRiskScannerRoute
+  '/app/valuation': typeof AppValuationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/app': typeof AppRoute
+  '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/signup': typeof SignupRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/exit-score': typeof AppExitScoreRoute
+  '/app/optimization': typeof AppOptimizationRoute
+  '/app/risk-scanner': typeof AppRiskScannerRoute
+  '/app/valuation': typeof AppValuationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/app' | '/login' | '/onboarding' | '/signup'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/login'
+    | '/onboarding'
+    | '/signup'
+    | '/app/dashboard'
+    | '/app/exit-score'
+    | '/app/optimization'
+    | '/app/risk-scanner'
+    | '/app/valuation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/app' | '/login' | '/onboarding' | '/signup'
-  id: '__root__' | '/' | '/app' | '/login' | '/onboarding' | '/signup'
+  to:
+    | '/'
+    | '/app'
+    | '/login'
+    | '/onboarding'
+    | '/signup'
+    | '/app/dashboard'
+    | '/app/exit-score'
+    | '/app/optimization'
+    | '/app/risk-scanner'
+    | '/app/valuation'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/login'
+    | '/onboarding'
+    | '/signup'
+    | '/app/dashboard'
+    | '/app/exit-score'
+    | '/app/optimization'
+    | '/app/risk-scanner'
+    | '/app/valuation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AppRoute: typeof AppRoute
+  AppRoute: typeof AppRouteWithChildren
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
   SignupRoute: typeof SignupRoute
@@ -116,12 +192,65 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/valuation': {
+      id: '/app/valuation'
+      path: '/valuation'
+      fullPath: '/app/valuation'
+      preLoaderRoute: typeof AppValuationRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/risk-scanner': {
+      id: '/app/risk-scanner'
+      path: '/risk-scanner'
+      fullPath: '/app/risk-scanner'
+      preLoaderRoute: typeof AppRiskScannerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/optimization': {
+      id: '/app/optimization'
+      path: '/optimization'
+      fullPath: '/app/optimization'
+      preLoaderRoute: typeof AppOptimizationRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/exit-score': {
+      id: '/app/exit-score'
+      path: '/exit-score'
+      fullPath: '/app/exit-score'
+      preLoaderRoute: typeof AppExitScoreRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/dashboard': {
+      id: '/app/dashboard'
+      path: '/dashboard'
+      fullPath: '/app/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppExitScoreRoute: typeof AppExitScoreRoute
+  AppOptimizationRoute: typeof AppOptimizationRoute
+  AppRiskScannerRoute: typeof AppRiskScannerRoute
+  AppValuationRoute: typeof AppValuationRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppDashboardRoute: AppDashboardRoute,
+  AppExitScoreRoute: AppExitScoreRoute,
+  AppOptimizationRoute: AppOptimizationRoute,
+  AppRiskScannerRoute: AppRiskScannerRoute,
+  AppValuationRoute: AppValuationRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AppRoute: AppRoute,
+  AppRoute: AppRouteWithChildren,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   SignupRoute: SignupRoute,
