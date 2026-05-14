@@ -2,12 +2,12 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 /*
- * ExitEcom Design System — Dark Royal Blue Institutional
+ * ExitEcom Design System — Light Navy/Blue Institutional
  * Variable names preserved for backwards compatibility; values remapped.
  */
 
@@ -40,7 +40,7 @@
   --color-border-dark: var(--border-dark);
   --color-sidebar: var(--sidebar);
   --color-sidebar-active: var(--sidebar-active);
-  --color-card: var(--bg-secondary);
+  --color-card: #FFFFFF;
   --color-card-foreground: var(--text-primary);
   --color-muted: var(--bg-secondary);
   --color-muted-foreground: var(--text-muted);
@@ -48,85 +48,94 @@
   --color-primary-foreground: #FFFFFF;
   --color-secondary: var(--bg-secondary);
   --color-secondary-foreground: var(--text-primary);
-  --color-input: var(--border-dark);
+  --color-input: var(--border-mid);
   --color-ring: var(--accent);
-  --color-popover: var(--bg-secondary);
+  --color-popover: #FFFFFF;
   --color-popover-foreground: var(--text-primary);
   --color-destructive: var(--risk-critical);
   --color-destructive-foreground: #FFFFFF;
 }
 
 :root {
-  /* Backgrounds (page bg now dark) */
-  --bg-primary: #0A0A0F;
-  --bg-secondary: #111118;
-  --bg-dark: #0A0A0F;
-  --bg-dark-secondary: #16161F;
+  /* Backgrounds */
+  --bg-primary: #F7F8FA;
+  --bg-secondary: #EFF1F5;
+  --bg-surface: #FFFFFF;
+  --bg-dark: #0D1F3C;
+  --bg-dark-secondary: #152B50;
 
   /* Blue accent family */
-  --accent: #2563EB;
-  --accent-muted: #3B82F6;
+  --accent: #1A56DB;
+  --accent-muted: #1E47C5;
   --blue-deep: #1E3A8A;
   --blue-light: #60A5FA;
+  --blue-100: #EBF5FF;
+  --blue-200: #BFDBFE;
 
-  /* Text — primary surface is dark, so primary text is white */
-  --text-primary: #FFFFFF;
-  --text-secondary: #E2E8F0;
-  --text-muted: #94A3B8;
-  --text-dim: #475569;
-  --text-on-dark: #FFFFFF;
-  --text-on-dark-secondary: #94A3B8;
+  /* Text */
+  --text-primary: #0D1F3C;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --text-dim: #9CA3AF;
+  --text-on-dark: #F9FAFB;
+  --text-on-dark-secondary: #93AEC8;
 
   /* Semantic */
-  --risk-critical: #EF4444;
-  --risk-medium: #F59E0B;
-  --positive: #22C55E;
+  --risk-critical: #DC2626;
+  --risk-medium: #D97706;
+  --positive: #16A34A;
 
-  /* Borders (all dark now — no more warm cream) */
-  --border-warm: #1E1E2E;
-  --border-dark: #1E1E2E;
-  --border-mid: #252535;
-  --border-blue: rgba(37, 99, 235, 0.25);
+  /* Borders */
+  --border-warm: #E2E8F0;
+  --border-dark: #1E3A6E;
+  --border-mid: #CBD5E1;
+  --border-blue: #BFDBFE;
 
-  /* Sidebar */
-  --sidebar: #0A0A0F;
-  --sidebar-active: rgba(37, 99, 235, 0.12);
+  /* Sidebar (deep navy) */
+  --sidebar: #0D1F3C;
+  --sidebar-active: rgba(26, 86, 219, 0.18);
 
-  --font-display: 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 
   --radius: 8px;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 3px rgba(13, 31, 60, 0.06);
+  --shadow-md: 0 4px 12px rgba(13, 31, 60, 0.08);
+  --shadow-lg: 0 8px 24px rgba(13, 31, 60, 0.10);
 }
 
 @layer base {
   * {
-    border-color: var(--border-dark);
+    border-color: var(--border-warm);
   }
   html, body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-body);
+    font-size: 0.9375rem;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.01em;
     color: var(--text-primary);
   }
   input, textarea, select {
-    background-color: var(--bg-dark-secondary);
-    border: 1px solid var(--border-mid);
+    background-color: #FFFFFF;
+    border: 1.5px solid var(--border-mid);
     color: var(--text-primary);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
   }
   input::placeholder, textarea::placeholder { color: var(--text-dim); }
   input:focus, textarea:focus, select:focus {
     border-color: var(--accent);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.12);
   }
 }
 
@@ -136,23 +145,23 @@
 @utility label-caps {
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-weight: 600;
 }
 @utility label-caps-dark {
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #4A6080;
   font-weight: 600;
 }
 @utility label-caps-gold {
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 600;
@@ -163,22 +172,25 @@
   color: #FFFFFF;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   padding: 10px 20px;
   border-radius: 6px;
   transition: background-color 150ms ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border: none;
+  cursor: pointer;
 }
 @utility btn-primary-hover { background-color: var(--accent-muted); }
 
 @utility btn-ghost-dark {
   background-color: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--blue-deep);
+  color: var(--text-on-dark);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   padding: 10px 20px;
   border-radius: 6px;
   transition: all 150ms ease;
@@ -188,10 +200,11 @@
 }
 @utility btn-ghost-light {
   background-color: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--blue-deep);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-mid);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   padding: 10px 20px;
   border-radius: 6px;
   transition: all 150ms ease;
@@ -201,15 +214,15 @@
 }
 
 @utility card-light {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-dark);
-  border-radius: 8px;
-  color: var(--text-primary);
-}
-@utility card-dark {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-dark);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-warm);
   border-radius: 8px;
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
+}
+@utility card-dark {
+  background-color: var(--bg-dark-secondary);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  color: var(--text-on-dark);
 }
