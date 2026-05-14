@@ -44,46 +44,58 @@ function Nav() {
 function Hero() {
   return (
     <section className="border-b border-[var(--border-dark)]">
-      <div className="max-w-[1100px] mx-auto px-6 lg:px-10 py-28 md:py-40 text-center">
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <SectionLabel gold>Pre-Exit Intelligence for E-commerce</SectionLabel>
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.05 }}
-          className="font-display mt-8 text-[44px] sm:text-[64px] md:text-[78px] leading-[0.95] tracking-tight text-[var(--text-on-dark)]"
-        >
-          You're leaving money<br /> on the table.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="font-display italic text-[var(--accent)] text-2xl md:text-3xl mt-6"
-        >
-          Find out exactly how much.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-8 text-[17px] md:text-[18px] text-[var(--text-on-dark-secondary)] max-w-2xl mx-auto leading-relaxed"
-        >
-          ExitEcom is the operating system e-commerce founders use before selling. Get your Exit Score, understand your valuation, and increase what buyers will pay.
-        </motion.p>
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-24 md:py-32 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="text-left">
+          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <SectionLabel gold>Pre-Exit Intelligence for E-commerce</SectionLabel>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="font-display mt-6 text-[40px] sm:text-[56px] md:text-[68px] leading-[0.98] tracking-tight text-[var(--text-on-dark)]"
+          >
+            You're leaving money on the table.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="font-display italic text-[var(--accent-on-dark)] text-2xl md:text-3xl mt-5"
+          >
+            Find out exactly how much.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="mt-6 text-[16px] md:text-[17px] text-[var(--text-on-dark-secondary)] max-w-xl leading-relaxed"
+          >
+            ExitEcom is the operating system e-commerce founders use before selling. Get your Exit Score, understand your valuation, and increase what buyers will pay.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8"
+          >
+            <Link to="/signup" className="btn-primary">Get Your Free Exit Score <ArrowRight className="w-4 h-4" /></Link>
+          </motion.div>
+        </div>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-10 flex flex-col sm:flex-row gap-3 justify-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative flex justify-center lg:justify-end"
         >
-          <Link to="/signup" className="btn-primary">Get Your Free Exit Score <ArrowRight className="w-4 h-4" /></Link>
-          <a href="#process" className="btn-ghost-dark">See How It Works</a>
+          <img
+            src={heroImage}
+            alt="3D illustration of business acquisition: handshake merging into rising charts and gold coins"
+            width={1024}
+            height={1024}
+            className="w-full max-w-[560px] h-auto drop-shadow-[0_30px_60px_rgba(147,197,253,0.15)]"
+          />
         </motion.div>
-        <p className="mt-10 text-xs tracking-[0.18em] uppercase text-[var(--text-on-dark-secondary)]">
-          Used by founders preparing exits from £150k to £5M+
-        </p>
       </div>
     </section>
   );
