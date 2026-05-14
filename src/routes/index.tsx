@@ -150,10 +150,10 @@ function ScorePreview() {
           <div className="mt-6 flex items-center gap-8">
             <ScoreRing score={68} />
             <div>
-              <div className="font-display text-[var(--accent)] text-4xl">{fmtGBPk(220000)}</div>
+              <div className="font-display text-[var(--accent-on-dark)] text-4xl">{fmtGBPk(220000)}</div>
               <div className="text-xs text-[var(--text-on-dark-secondary)] mt-1">Fair market value</div>
-              <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 border border-[var(--accent)] rounded-sm">
-                <span className="text-[var(--accent)] text-[10px] tracking-[0.18em] uppercase">Strong Asset</span>
+              <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 border border-[var(--accent-on-dark)] rounded-sm">
+                <span className="text-[var(--accent-on-dark)] text-[10px] tracking-[0.18em] uppercase">Strong Asset</span>
               </div>
             </div>
           </div>
@@ -223,17 +223,17 @@ function Pricing() {
 
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           {tiers.map((t) => (
-            <div key={t.name} className={`p-8 rounded-lg border transition-colors ${t.featured ? "bg-[var(--bg-dark)] text-[var(--text-on-dark)] border-[var(--accent)]" : "bg-[var(--bg-primary)] border-[var(--border-warm)]"}`}>
+            <div key={t.name} className={`p-8 rounded-lg border transition-colors ${t.featured ? "bg-[var(--bg-dark)] text-[var(--text-on-dark)] border-[var(--accent-on-dark)]" : "bg-[var(--bg-primary)] border-[var(--border-warm)]"}`}>
               <div className={t.featured ? "label-caps-gold" : "label-caps"}>{t.name}</div>
               <div className="mt-6 flex items-baseline gap-1">
-                <span className="font-display text-5xl" style={{ color: t.featured ? "var(--accent)" : "var(--text-primary)" }}>{t.price}</span>
+                <span className="font-display text-5xl" style={{ color: t.featured ? "var(--accent-on-dark)" : "var(--text-primary)" }}>{t.price}</span>
                 {t.per && <span className={t.featured ? "text-[var(--text-on-dark-secondary)]" : "text-[var(--text-secondary)]"}>{t.per}</span>}
               </div>
               <p className={`mt-3 text-sm ${t.featured ? "text-[var(--text-on-dark-secondary)]" : "text-[var(--text-secondary)]"}`}>{t.desc}</p>
               <ul className="mt-7 space-y-3">
                 {t.features.map((f) => (
                   <li key={f} className={`flex items-start gap-3 text-sm ${t.featured ? "text-[var(--text-on-dark)]" : "text-[var(--text-primary)]"}`}>
-                    <Check className="w-4 h-4 mt-0.5 text-[var(--accent)] shrink-0" strokeWidth={1.5} />
+                    <Check className={`w-4 h-4 mt-0.5 shrink-0 ${t.featured ? "text-[var(--accent-on-dark)]" : "text-[var(--accent)]"}`} strokeWidth={1.5} />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -256,7 +256,7 @@ function FinalCTA() {
         <h2 className="font-display text-4xl md:text-6xl text-[var(--text-on-dark)] leading-[1.05]">
           The best time to prepare<br /> was two years ago.
         </h2>
-        <p className="font-display italic mt-5 text-3xl md:text-4xl text-[var(--accent)]">
+        <p className="font-display italic mt-5 text-3xl md:text-4xl text-[var(--accent-on-dark)]">
           The second best time is now.
         </p>
         <div className="mt-12">
