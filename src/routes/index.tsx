@@ -6,6 +6,7 @@ import { SectionLabel } from "@/components/ex/SectionLabel";
 import { ScoreRing } from "@/components/ex/ScoreRing";
 import { ProgressBar } from "@/components/ex/ProgressBar";
 import { mockBusiness, fmtGBPk } from "@/lib/mock";
+import heroImage from "@/assets/hero-acquisition.png";
 
 export const Route = createFileRoute("/")({ component: Landing });
 
