@@ -164,7 +164,7 @@
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-on-dark);
   font-weight: 600;
 }
 
