@@ -45,7 +45,7 @@ function Memo() {
           </div>
         </aside>
 
-        <article className="bg-[var(--bg-secondary)] border border-[var(--border-dark)] rounded-lg p-10 lg:p-12">
+        <article className="bg-white border border-[var(--border-warm)] rounded-lg p-10 lg:p-12 shadow-sm">
           <div className="border-b border-[var(--border-warm)] pb-6">
             <div className="label-caps" style={{ fontSize: 10 }}>Confidential Investment Memorandum</div>
             <h2 className="font-display text-3xl mt-3">{mockBusiness.name}</h2>

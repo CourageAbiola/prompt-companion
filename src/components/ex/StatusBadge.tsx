@@ -1,16 +1,16 @@
 type Status = "high" | "medium" | "low" | "connected" | "missing" | "partial" | "strong" | "premium" | "ready" | "pending";
 
 const map: Record<Status, { bg: string; fg: string; label?: string }> = {
-  high: { bg: "rgba(192,57,43,0.10)", fg: "var(--risk-critical)", label: "HIGH" },
-  medium: { bg: "rgba(212,131,74,0.12)", fg: "var(--risk-medium)", label: "MEDIUM" },
-  low: { bg: "rgba(154,154,142,0.18)", fg: "var(--text-secondary)", label: "LOW" },
-  connected: { bg: "rgba(45,106,79,0.12)", fg: "var(--positive)", label: "CONNECTED" },
-  missing: { bg: "rgba(154,154,142,0.18)", fg: "var(--text-secondary)", label: "NOT CONNECTED" },
-  partial: { bg: "rgba(212,131,74,0.12)", fg: "var(--risk-medium)", label: "PARTIAL" },
+  high: { bg: "#DC2626", fg: "#FFFFFF", label: "HIGH" },
+  medium: { bg: "#D97706", fg: "#FFFFFF", label: "MEDIUM" },
+  low: { bg: "#1A56DB", fg: "#FFFFFF", label: "LOW" },
+  connected: { bg: "rgba(22,163,74,0.12)", fg: "var(--positive)", label: "CONNECTED" },
+  missing: { bg: "#EFF1F5", fg: "var(--text-muted)", label: "NOT CONNECTED" },
+  partial: { bg: "rgba(217,119,6,0.12)", fg: "var(--risk-medium)", label: "PARTIAL" },
   strong: { bg: "transparent", fg: "var(--accent)", label: "STRONG ASSET" },
   premium: { bg: "transparent", fg: "var(--accent)", label: "PREMIUM" },
-  ready: { bg: "rgba(45,106,79,0.12)", fg: "var(--positive)", label: "READY" },
-  pending: { bg: "rgba(212,131,74,0.12)", fg: "var(--risk-medium)", label: "PENDING" },
+  ready: { bg: "rgba(22,163,74,0.12)", fg: "var(--positive)", label: "READY" },
+  pending: { bg: "rgba(217,119,6,0.12)", fg: "var(--risk-medium)", label: "PENDING" },
 };
 
 export function StatusBadge({ status, children }: { status: Status; children?: React.ReactNode }) {
