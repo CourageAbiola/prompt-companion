@@ -67,6 +67,7 @@
   /* Blue accent family */
   --accent: #1A56DB;
   --accent-muted: #1E47C5;
+  --accent-on-dark: #93C5FD;
   --blue-deep: #1E3A8A;
   --blue-light: #60A5FA;
   --blue-100: #EBF5FF;
@@ -163,7 +164,7 @@
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-on-dark);
   font-weight: 600;
 }
 
